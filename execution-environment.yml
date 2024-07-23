@@ -19,6 +19,8 @@ dependencies:
       - name: theforeman.foreman
       - name: google.cloud
       - name: openstack.cloud
+      - name: community.dns
+      - name: community.mongodb
       - name: community.vmware
       - name: community.mysql
       - name: ovirt.ovirt
@@ -56,6 +58,7 @@ dependencies:
     pywinrm[kerberos,credssp]
     toml
     pexpect>=4.5
+    pymongo
     python-daemon
     pyyaml
     pymysql
