@@ -20,12 +20,12 @@ dependencies:
       - name: google.cloud
       - name: openstack.cloud
       - name: community.vmware
+      - name: community.mysql
       - name: ovirt.ovirt
       - name: kubernetes.core
       - name: ansible.posix
       - name: ansible.windows
       - name: redhatinsights.insights
-      - name: kubevirt.core
   system: |
     git-core [platform:rpm]
     python3.9-devel [platform:rpm compile]
@@ -58,6 +58,7 @@ dependencies:
     pexpect>=4.5
     python-daemon
     pyyaml
+    pymysql
     six
     receptorctl
 additional_build_steps:
