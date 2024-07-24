@@ -23,6 +23,7 @@ dependencies:
       - name: community.mongodb
       - name: community.vmware
       - name: community.mysql
+      - name: community.rabbitmq
       - name: ovirt.ovirt
       - name: kubernetes.core
       - name: ansible.posix
@@ -42,6 +43,7 @@ dependencies:
     epel-release [platform:rpm]
     python-unversioned-command [platform:rpm]
     unzip [platform:rpm]
+    wget [platform:rpm]
     podman-remote [platform:rpm]
     cmake [platform:rpm compile]
     gcc [platform:rpm compile]
@@ -67,10 +69,10 @@ dependencies:
 additional_build_steps:
   append_base:
     - RUN $PYCMD -m pip install -U pip
-    - RUN dnf install -y wget
   append_final:
     - COPY --from=quay.io/ansible/receptor:devel /usr/bin/receptor /usr/bin/receptor
     - RUN mkdir -p /var/run/receptor
     - RUN git lfs install --system
-    - RUN wget https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc && chmod +x /usr/local/bin/mc
+    - RUN wget https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc
+    - RUN chmod +x /usr/local/bin/mc
         
