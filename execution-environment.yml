@@ -75,4 +75,8 @@ additional_build_steps:
     - RUN git lfs install --system
     - RUN wget https://dl.min.io/client/mc/release/linux-amd64/mc -O /usr/local/bin/mc
     - RUN chmod +x /usr/local/bin/mc
+    - RUN curl -O https://mq1-test.raynetone.com/cli/rabbitmqadmin && chmod +x rabbitmqadmin && mv rabbitmqadmin /usr/local/bin/rabbitmqadmin
+    - RUN curl -O https://mq1-test.raynetone.com/cli/rabbitmqctl && chmod +x rabbitmqctl && mv rabbitmqctl /usr/local/bin/rabbitmqctl
+
+
         
